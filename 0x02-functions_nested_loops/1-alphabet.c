@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- *pruint_alphabet -  print alphabet in lowercase
- *
+ * pruint_alphabet -  print alphabet in lowercase
+ * 
+ * Return: no return value
  */
 void print_alphabet(void)
 {
