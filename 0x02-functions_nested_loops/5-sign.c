@@ -1,39 +1,9 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
-  * main - Entry point
-  *
-  * Return: Always 0.
-  */
-int print_sign(int n);
-
-int main(void)
-{
-	int r;
-
-	r = print_sign(98);
-	putchar(',');
-	putchar(' ');
-	putchar(r + '0');
-	putchar('\n');
-	r = print_sign(0);
-	putchar(',');
-	putchar(' ');
-	putchar(r + '0');
-	putchar('\n');
-	r = print_sign(0xff);
-	putchar(',');
-	putchar(' ');
-	putchar(r + '0');
-	putchar('\n');
-	r = print_sign(-1);
-	putchar(',');
-	putchar(' ');
-	putchar(r + '0');
-	putchar('\n');
-	return (0);
-}
-
+ * print_sign - Determines whether an integer is positive, negative or zero.
+ * @n: the number to be checked.
+ * Return: 1 if positive, 0 if zero, -1 if negative, / if not a digit.
+ */
 int print_sign(int n)
 {
 	if (n > 0)
