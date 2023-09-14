@@ -1,19 +1,9 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
-  * main - Entry point
-  *
-  * Return: Always 0.
-  */
-void jack_bauer(void);
+ * jack_bauer - prints time table in this format: HH:MM * Return: the sum of two numb
+ */
 
-int main(void)
-{
-	jack_bauer();
-	return (0);
-}
-
-void jack_bauer(void)
+void ck_bauer(void)
 {
 	int i, j;
 
