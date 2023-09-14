@@ -1,34 +1,20 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
-  * main - Entry point
-  *
-  *Return: Alyas 0.
+  * print_last_digit - prints the last digit of a numer.
+  * @i: digit to find the last place of.
+  * Return: The last digit.
   */
-int print_last_digit(int);
-
-int main(void)
-{
-	int r;
-
-	print_last_digit(98);
-	print_last_digit(0);
-	r = print_last_digit(-1024);
-	putchar('0' + r);
-	putchar('\n');
-	return (0);
-}
 
 int print_last_digit(int i)
 {
 	if (i >= 0)
 	{
-		printf("%d", i % 10);
+		_putchar((i % 10) + '0');
 		return (i % 10);
 	}
 	else
 	{
-		printf("%d", -1 * (i % 10));
+		_putchar( (-1 * (i % 10)) + '0');
 		return (-1 * (i % 10));
 	}
 }
