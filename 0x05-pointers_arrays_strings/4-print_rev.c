@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
-  * print_rev - print string in reverse orders
-  * @s: character
-  * Return: void
-  */
+ * print_rev - print string in reverse orders
+ * @s: character
+ * Return: void
+ */
 void print_rev(char *s)
 {
 
@@ -16,6 +16,7 @@ void print_rev(char *s)
 	{
 		i++;
 	}
+	i -= 1;
 	while (i != -1)
 	{
 		_putchar(*(s + i));
