@@ -22,9 +22,9 @@ int _atoi(char *s)
 		return (0);
 	}
 	/*check rhe char before digirs if it -/+*/
-	if (s[i-1] == '-' || s[i-1] == '+')
+	if (s[i - 1] == '-' || s[i - 1] == '+')
 	{
-		sign = (s[i-1] == '-') ? -1 : 1;
+		sign = (s[i - 1] == '-') ? -1 : 1;
 	}
 	/*convert digit to intger*/
 	while (s[i] >= '0' && s[i] <= '9')
