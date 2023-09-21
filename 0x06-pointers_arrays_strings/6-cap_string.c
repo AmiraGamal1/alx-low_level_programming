@@ -15,6 +15,8 @@ char *cap_string(char *a)
 	i = 0;
 	while (a[i] != '\0')
 	{
+		if (i == 0 && a[i] >= 'a' && a[i] <= 'z')
+			a[i] -= 32;
 		for (j = 0; j < 13; j++)
 		{
 			if (a[i] == sep[j])
