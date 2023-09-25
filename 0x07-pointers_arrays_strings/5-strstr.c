@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 /**
-  * _strstr -  function finds the first occurrence of the substring needle in the string haystack
+  * _strstr -  function finds the first occurrence of the substring.
   * @haystack: string to match
   * @needle: substring
   * Return: pointer to the beginning of the located substring
   */
 char *_strstr(char *haystack, char *needle)
 {
-	int i,j;
+	int i, j;
 
 	for (i = 0; *haystack != '\0'; i++)
 	{
