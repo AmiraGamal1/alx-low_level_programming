@@ -36,7 +36,6 @@ char *argstostr(int ac, char **av)
 		size += _strlen(av[i]);
 		size += 1;
 	}
-	printf("%d\n", size);
 
 	str = malloc(sizeof(char) * size + 1);
 	/* check if fail to allocate space */
