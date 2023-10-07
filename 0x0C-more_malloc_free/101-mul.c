@@ -4,7 +4,7 @@
 
 /**
   * _isdigit - check if arg is digit
-  * _@ptr: pointer to arg
+  * @ptr: pointer to arg
   * Return: 1 if == digit 0 else
   */
 int _isdigit(char *ptr)
@@ -35,7 +35,7 @@ char *_memset(char *ptr, int size)
 	return (ptr);
 }
 /**
-  * _memmov - make forward memory shift
+  * _memmove - make forward memory shift
   * @src: pointer to allocated memory
   * @dest: destination pointer
   * @n: number of byte to move
@@ -45,7 +45,7 @@ char *_memmove(char *dest, char *src, int n)
 {
 	int i;
 
-	if (dest > src)
+	if (dest < src)
 	{
 		for (i = 0; i < n; i++)
 			dest[i] = src[i];
@@ -57,7 +57,7 @@ char *_memmove(char *dest, char *src, int n)
   * @ptr: pointer to string of digit
   * Return: void
   */
-void _print(char *ptr) 
+void _print(char *ptr)
 {
 	int i;
 
@@ -86,18 +86,16 @@ int _strlen(char *ptr)
   */
 char *mul(char *n1, char *n2)
 {
-	int l1, l2, size, i, j, carry, product, start, s;
+	int l1, l2, size, i, j, carry, product, start;
 	char *res;
 
 	l1 = _strlen(n1);
 	l2 = _strlen(n2);
 	size = l1 + l2;
-	printf("%d\n", size);
 	res = malloc(sizeof(char) * (size + 1));
 	if (res == NULL)
 		return (NULL);
-	_memset(res, size);
-	printf("%p\n",res);
+	res = _memset(res, size);
 	res[size] = '\0';
 	/* multiply n1 * n2 and add result in res */
 	for (i = l1 - 1; i >= 0; i--)
@@ -105,7 +103,7 @@ char *mul(char *n1, char *n2)
 		carry = 0;
 		for (j = l2 - 1; j >= 0; j--)
 		{
-			product = (n1[i] - '0') * (n2[j] - '0') + 
+			product = (n1[i] - '0') * (n2[j] - '0') +
 				(res[i + j + 1] - '0') + carry;
 			res[i + j + 1] = (product % 10) + '0';
 			carry = product / 10;
@@ -113,19 +111,14 @@ char *mul(char *n1, char *n2)
 			res[i] += carry;
 	}
 	/* remove all zero in the beginning */
-	printf("%p\n",res);
 	start = 0;
 	while (res[start] == '0' && start < (size - 1))
 		start++;
-	printf("%d\n", start);
 	if (start > 0)
 	{
-		res =  _memmove(res , res + start, size - start);
+		res =  _memmove(res, res + start, size - start);
 		res[size - start] = '\0';
 	}
-	printf("%p\n",res);
-	s = _strlen(res);
-	printf("%d\n", s);
 	return (res);
 }
 /**
@@ -160,8 +153,8 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		exit(98);
 	}
-	res = mul(argv[1] ,argv[2]);
-	printf("%p\n",res);
+	res = mul(argv[1], argv[2]);
 	_print(res);
+	free(res);
 	return (0);
 }
