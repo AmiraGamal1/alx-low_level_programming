@@ -7,7 +7,7 @@
   */
 void print_all(const char * const format, ...)
 {
-	unsigned int j;
+	int j;
 	char *str, *sep = "";
 	va_list args;
 
@@ -16,7 +16,7 @@ void print_all(const char * const format, ...)
 	j = 0;
 	if (format)
 	{
-		while (format[j] != '\0')
+		while (format[j])
 		{
 			switch (format[j])
 			{
@@ -42,7 +42,7 @@ void print_all(const char * const format, ...)
 			sep = ", ";
 			j++;
 		}
-		printf("\n");
-		va_end(args);
 	}
+	printf("\n");
+	va_end(args);
 }
