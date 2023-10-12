@@ -8,7 +8,7 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int j;
-	char *sep = "";
+	char *str, *sep = "";
 	va_list args;
 
 	va_start(args, format);
@@ -28,12 +28,10 @@ void print_all(const char * const format, ...)
 				printf("%s%f", sep, va_arg(args, double));
 				break;
 			case 's':
-				if (!(va_arg(args, char *)))
-				{
-					printf("(nil)%s", sep);
-					break;
-				}
-				printf("%s%s", sep, va_arg(args, char *));
+				str = va_arg(args, char *);
+				if (!str)
+					str = "(nil)";
+				printf("%s%s", sep, str);
 				break;
 			default:
 				j++;
