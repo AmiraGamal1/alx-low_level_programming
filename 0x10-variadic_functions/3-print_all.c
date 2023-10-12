@@ -11,6 +11,8 @@ void print_all(const char * const format, ...)
 	char *str, *sep = "";
 	va_list args;
 
+	if (!format)
+		return;
 	va_start(args, format);
 
 	j = 0;
