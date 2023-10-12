@@ -12,9 +12,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *arg;
 
-	if (separator == NULL)
-		separator = " ";
-
 	va_start(args, n);
 
 	for (i = 0; i < n; i++)
@@ -22,7 +19,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		arg = va_arg(args, char *);
 		if (arg == NULL)
 			arg = "(nil)";
-		if (i != n - 1)
+		if (!separator)
+			printf("%s", arg);
+		if (separator && i != n - 1)
 			printf("%s%s", arg, separator);
 		else
 			printf("%s", arg);
