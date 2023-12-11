@@ -1,21 +1,10 @@
-#include <stdio.h>
+#include <"main.h"
 
 /**
-  * main -Entry point
+  * add - add two number
   *
-  * Return: Always 0.
+  * Return: the sum of two numbers.
   */
-int add(int, int);
-
-int main(void)
-{
-	int n;
-
-	n = add(89, 9);
-	printf("%d\n", n);
-	return (0);
-}
-
 int add(int a, int b)
 {
 	return (a + b);

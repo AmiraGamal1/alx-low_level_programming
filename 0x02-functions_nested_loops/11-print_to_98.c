@@ -1,22 +1,11 @@
 #include <stdio.h>
 
 /**
-  * main - Entry point
-  ** 
-  * REturn: Always 0,
+  * print_to_98 - print number from n to 98
+  *
+  * @n: integer
+  * Return: nothings.
   */
-void print_to_98(int n);
-
-int main(void)
-{
-	print_to_98(0);
-	print_to_98(98);
-	print_to_98(111);
-	print_to_98(81);
-	print_to_98(-10);
-	return (0);
-}
-
 void print_to_98(int n)
 {
 	while (n < 98)
