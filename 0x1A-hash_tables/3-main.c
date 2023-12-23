@@ -14,6 +14,7 @@ int main(void)
 
     ht = hash_table_create(1024);
     hash_table_set(ht, "betty", "cool");
+    hash_table_set(ht, "betty", "new");
     hash_table_set(ht, "hetairas", "cool 1");
     hash_table_set(ht, "mentioner", "cool 2");
     hash_table_set(ht, "heliotropes", "cool 11");
